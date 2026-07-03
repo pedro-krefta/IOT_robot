@@ -1,44 +1,1334 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="./src/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>RoboTech | Automação Industrial</title>
+      <script src="index.js"defer></script>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body class="bg-black">
-    <header class="bg-gray-300 h-20 flex flex-row">
-
-       <nav class="flex flex-row"> 
-
-    <a href="./html/cartesiano.html"
-    class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300">
-    Robô Cartesiano</a>
-
-   <a href="./html/scara.html"
-   class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo scara</a>
-
-    <a href="./html/articulado.html"
-    class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo articulado</a>
-
-    <a href="./html/cilindricos.html"
-   class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo cilindricos</a>
-    
-   <a href="./html/delta.html"
-   class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo delta</a>
-   
-   <a href="./html/polares.html"
-   class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo polares</a>
-   
-   <a href="./html/colaborativos.html"
-   class="flex flex-row justify-center gap-8 text-base text-amber-400 hover:bg-gray-100 hover:scale-105 transition duration-300" >robo colaborativos</a>
-   </nav>
+<body class="bg-slate-950 overflow-x-hidden">
+    <div class="fixed inset-0 -z-10">
+        <div
+            class="absolute w-96 h-96 bg-blue-600 rounded-full blur-[180px] opacity-30 top-0 left-0">
+        </div>
+        <div
+            class="absolute w-96 h-96 bg-cyan-500 rounded-full blur-[180px] opacity-20 bottom-0 right-0">
+        </div>
+    </div>
+    <header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-blue-500/20">
+        <nav class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-white">
+                Robo
+            <span class="text-blue-500">Tech</span>
+            </h1>
+            <ul class="hidden lg:flex gap-8 text-white">
+                <li><a href="#scara" class="hover:text-blue-400 duration-300">SCARA</a></li>
+                <li><a href="#cartesiano" class="hover:text-blue-400 duration-300">cartesiano</a></li>
+                <li><a href="#articulado" class="hover:text-blue-400 duration-300">Articulados</a></li>
+                <li><a href="#cilindrico" class="hover:text-blue-400 duration-300">Cilíndricos</a></li>
+                <li><a href="#delta" class="hover:text-blue-400 duration-300">Delta</a></li>
+                <li><a href="#polar" class="hover:text-blue-400 duration-300">Polares</a></li>
+                <li><a href="#cobot" class="hover:text-blue-400 duration-300">Cobots</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-    
-    </main>
-    <footer>
 
-    </footer>
+    <section
+        class="min-h-screen flex items-center justify-center pt-24">
+        <div
+            class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span
+                    class="bg-blue-600/20 text-blue-300 px-5 py-2 rounded-full border border-blue-500">
+                    🤖 Tecnologia Industrial 4.0
+                </span>
+
+                <h2
+                    class="text-6xl font-extrabold text-white leading-tight mt-8">
+                    Conheça o
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-700">
+                        Futuro da Robótica
+                    </span>
+                </h2>
+                <p
+                    class="text-gray-400 text-lg mt-8 leading-8">
+                    Descubra os principais robôs utilizados na indústria moderna,
+                    suas aplicações, vantagens e como estão transformando
+                    completamente a automação industrial.
+                </p>
+            </div>
+
+            <div class="relative flex justify-center">
+                <div
+                    class="absolute w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-30">
+                </div>
+                <img
+                    src="img/hero-robot.png"
+                    alt="Robô Industrial"
+                    class="relative w-[600px] animate-bounce">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="pb-20">
+        <div
+            class="max-w-6xl mx-auto px-8 grid md:grid-cols-4 gap-8">
+            <div
+                class="bg-slate-900/60 backdrop-blur-lg border border-blue-500/20 rounded-3xl p-8 text-center hover:scale-105 duration-300">
+                <h3 class="text-5xl font-bold text-blue-500">7</h3>
+                <p class="text-gray-400 mt-3">
+                    Tipos de Robôs
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-900/60 backdrop-blur-lg border border-blue-500/20 rounded-3xl p-8 text-center hover:scale-105 duration-300">
+                <h3 class="text-5xl font-bold text-blue-500">95%</h3>
+                <p class="text-gray-400 mt-3">
+                    Precisão
+                </p>
+
+            </div>
+            <div
+                class="bg-slate-900/60 backdrop-blur-lg border border-blue-500/20 rounded-3xl p-8 text-center hover:scale-105 duration-300">
+                <h3 class="text-5xl font-bold text-blue-500">24h</h3>
+                <p class="text-gray-400 mt-3">
+                    Operação
+                </p>
+            </div>
+            <div
+                class="bg-slate-900/60 backdrop-blur-lg border border-blue-500/20 rounded-3xl p-8 text-center hover:scale-105 duration-300">
+                <h3 class="text-5xl font-bold text-blue-500">4.0</h3>
+                <p class="text-gray-400 mt-3">
+                    Indústria Inteligente
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="scara" class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="text-blue-400 uppercase tracking-[6px] font-semibold">
+                Tecnologia Industrial
+            </span>
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-blue-500">SCARA</span>
+            </h2>
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                O SCARA é um dos robôs industriais mais utilizados no mundo
+                quando o assunto é velocidade, repetibilidade e precisão.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div class="absolute w-80 h-80 bg-blue-600 blur-[120px] opacity-30 rounded-full"></div>
+                <img
+                    src="./img/scara.png"
+                    alt="Robô SCARA"
+                    class="relative w-[500px] hover:scale-105 duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white mb-6">
+                    O que é um Robô SCARA?
+                </h3>
+                <p class="text-gray-400 leading-8">
+                    O robô SCARA (Selective Compliance Assembly Robot Arm)
+                    foi desenvolvido para executar tarefas rápidas de montagem,
+                    movimentação de peças e processos Pick and Place.
+                    Sua estrutura articulada permite grande velocidade no plano
+                    horizontal mantendo elevada precisão no eixo vertical.
+                </p>
+                <div class="grid grid-cols-2 gap-5 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-blue-500/20">
+                        <h4 class="text-blue-400 font-bold text-lg">
+                            Velocidade
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Muito Alta
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-blue-500/20">
+                        <h4 class="text-blue-400 font-bold text-lg">
+                            Precisão
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Excelente
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-blue-500/20">
+                        <h4 class="text-blue-400 font-bold text-lg">
+                            Eixos
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            X • Y • Z
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-blue-500/20">
+                        <h4 class="text-blue-400 font-bold text-lg">
+                            Aplicação
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Montagem Industrial
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+            <div class="bg-slate-900 rounded-3xl p-8 hover:-translate-y-3 duration-500 border border-blue-500/20">
+                <div class="text-5xl mb-5">
+                    ⚙️
+                </div>
+                <h3 class="text-white text-2xl font-bold">
+                    Funcionamento
+                </h3>
+                <p class="text-gray-400 mt-5 leading-7">
+                    Motores elétricos movimentam seus braços articulados
+                    enquanto outro eixo realiza os movimentos verticais,
+                    proporcionando alta repetibilidade.
+                </p>
+            </div>
+            <div class="bg-slate-900 rounded-3xl p-8 hover:-translate-y-3 duration-500 border border-blue-500/20">
+                <div class="text-5xl mb-5">
+                    🏭
+                </div>
+                <h3 class="text-white text-2xl font-bold">
+                    Aplicações
+                </h3>
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Pick and Place</li>
+                    <li>✔ Montagem</li>
+                    <li>✔ Parafusamento</li>
+                    <li>✔ Soldagem leve</li>
+                    <li>✔ Embalagens</li>
+                </ul>
+            </div>
+            <div class="bg-slate-900 rounded-3xl p-8 hover:-translate-y-3 duration-500 border border-blue-500/20">
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+                <h3 class="text-white text-2xl font-bold">
+                    Faixa de Preço
+                </h3>
+                <p class="text-gray-400 mt-5">
+                    R$ 80.000
+                    <br>
+                    até
+                    <br>
+                    R$ 300.000
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-4xl text-center font-bold text-white">
+                Principais Fabricantes
+            </h2>
+            <div class="flex flex-wrap justify-center gap-6 mt-12">
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    Epson
+                </div>
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    Yamaha
+                </div>
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    Omron
+                </div>
+                <div class="bg-slate-900 px-8 py-5 rounded-xl border border-blue-500/20 text-white">
+                    Mitsubishi
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cartesiano" class="py-32 bg-[#020617]">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[6px] text-blue-400 font-semibold">
+                Automação Industrial
+            </span>
+
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-cyan-400">Cartesiano</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                Alta precisão, movimentos lineares e excelente desempenho
+                em processos industriais repetitivos.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div class="absolute w-96 h-96 bg-cyan-500 rounded-full blur-[150px] opacity-20"></div>
+                <img src="./img/cartesiano.png"
+                    alt="Robô Cartesiano"
+                    class="relative w-[550px] hover:scale-105 duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white">
+                    O que é?
+                </h3>
+
+                <p class="text-gray-400 leading-8 mt-6">
+                    O robô cartesiano realiza movimentos lineares através dos
+                    eixos X, Y e Z. Sua estrutura rígida garante elevada precisão,
+                    tornando-o ideal para aplicações industriais que exigem
+                    repetibilidade e posicionamento exato.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-cyan-500/20">
+                        <h4 class="text-cyan-400 font-bold">
+                            Precisão
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Muito Alta
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-cyan-500/20">
+                        <h4 class="text-cyan-400 font-bold">
+                            Movimentos
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Lineares
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-cyan-500/20">
+                        <h4 class="text-cyan-400 font-bold">
+                            Eixos
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            X • Y • Z
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-cyan-500/20">
+                        <h4 class="text-cyan-400 font-bold">
+                            Controle
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Servo ou Step Motor
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-cyan-500/20 hover:-translate-y-3 duration-300">
+
+                <div class="text-5xl mb-6">
+                    ⚙️
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Como Funciona
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    Motores movimentam cada eixo de forma independente,
+                    permitindo deslocamentos precisos em qualquer ponto do
+                    volume de trabalho.
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-cyan-500/20 hover:-translate-y-3 duration-300">
+                <div class="text-5xl mb-6">
+                    🏭
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+                
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Impressão 3D</li>
+                    <li>✔ Corte a Laser</li>
+                    <li>✔ Pick and Place</li>
+                    <li>✔ Paletização</li>
+                    <li>✔ Montagem</li>
+                </ul>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-cyan-500/20 hover:-translate-y-3 duration-300">
+                <div class="text-5xl mb-6">
+                    💰
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 2.500
+                    <br>
+                    até
+                    <br>
+                    R$ 100.000+
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    Yamaha
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    HIWIN
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    igus
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    Parker
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    Techmation
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-cyan-500/20 text-white">
+                    Automak
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="articulado" class="py-32 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[6px] text-orange-400 font-semibold">
+                Automação Industrial
+            </span>
+
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-orange-400">Articulado</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                Inspirado no movimento do braço humano, o robô articulado é um dos
+                equipamentos mais versáteis da indústria moderna.
+            </p>
+        </div>
+
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div
+                    class="absolute w-96 h-96 bg-orange-500 rounded-full blur-[150px] opacity-20">
+                </div>
+
+                <img
+                    src="./img/articulado.png"
+                    alt="Robô Articulado"
+                    class="relative w-[550px] hover:scale-105 transition duration-500">
+
+            </div>
+
+            <div>
+
+                <h3 class="text-4xl font-bold text-white">
+                    O que é?
+                </h3>
+
+                <p class="text-gray-400 mt-6 leading-8">
+                    O robô articulado possui vários braços conectados por juntas
+                    rotativas, permitindo movimentos semelhantes aos de um braço
+                    humano. Sua estrutura oferece grande liberdade de movimento,
+                    tornando-o ideal para tarefas complexas.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-orange-500/20">
+                        <h4 class="text-orange-400 font-bold">
+                            Eixos
+                        </h4>
+
+
+                        <p class="text-gray-300 mt-3">
+                            4 a 7
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-orange-500/20">
+                        <h4 class="text-orange-400 font-bold">
+                            Precisão
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Muito Alta
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-orange-500/20">
+
+                        <h4 class="text-orange-400 font-bold">
+                            Movimento
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Multidirecional
+                        </p>
+                    </div>
+
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-orange-500/20">
+
+                        <h4 class="text-orange-400 font-bold">
+                            Controle
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Servo Motores
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+            <div
+                class="bg-slate-800 rounded-3xl p-8 border border-orange-500/20 hover:-translate-y-3 hover:border-orange-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    ⚙️
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Funcionamento
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    Cada junta possui um servo motor que movimenta o braço de forma
+                    sincronizada. Um controlador calcula toda a trajetória para
+                    posicionar o efetuador com elevada precisão.
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-800 rounded-3xl p-8 border border-orange-500/20 hover:-translate-y-3 hover:border-orange-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    🏭
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Soldagem</li>
+                    <li>✔ Pintura Industrial</li>
+                    <li>✔ Montagem</li>
+                    <li>✔ Paletização</li>
+                    <li>✔ Inspeção</li>
+                    <li>✔ Usinagem</li>
+                </ul>
+            </div>
+
+            <div
+                class="bg-slate-800 rounded-3xl p-8 border border-orange-500/20 hover:-translate-y-3 hover:border-orange-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 150.000
+                    <br><br>
+                    até
+                    <br><br>
+                    R$ 1.000.000+
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    KUKA
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    Yaskawa
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    Kawasaki
+                </div>
+                <div class="bg-slate-800 rounded-xl p-6 text-center border border-orange-500/20 text-white">
+                    Mitsubishi
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cilindrico" class="py-32 bg-[#020617]">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[6px] text-green-400 font-semibold">
+                Automação Industrial
+            </span>
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-green-400">Cilíndrico</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                Combinando movimentos rotativos e lineares, o robô cilíndrico
+                oferece alta precisão e excelente alcance em processos
+                industriais repetitivos.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="relative flex justify-center">
+
+                <div
+                    class="absolute w-96 h-96 bg-green-500 rounded-full blur-[150px] opacity-20">
+                </div>
+
+                <img
+                    src="./img/cilindrico.png"
+                    alt="Robô Cilíndrico"
+                    class="relative w-[520px] hover:scale-105 transition duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white">
+                    O que é?
+                </h3>
+
+                <p class="text-gray-400 mt-6 leading-8">
+                    O robô cilíndrico possui uma área de trabalho em formato
+                    cilíndrico. Sua estrutura combina uma base rotativa com
+                    movimentos lineares, permitindo acessar diferentes alturas e
+                    distâncias com rapidez e precisão.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-green-500/20">
+
+                        <h4 class="text-green-400 font-bold">
+                            Movimento
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Rotativo + Linear
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-green-500/20">
+                        <h4 class="text-green-400 font-bold">
+                            Área de Trabalho
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Cilíndrica
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-green-500/20">
+                        <h4 class="text-green-400 font-bold">
+                            Precisão
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Elevada
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-green-500/20">
+                        <h4 class="text-green-400 font-bold">
+                            Controle
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Servo Motores
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-green-500/20 hover:-translate-y-3 hover:border-green-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    ⚙️
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Funcionamento
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    O controlador coordena a rotação da base e os movimentos
+                    lineares do braço, permitindo posicionar o efetuador com
+                    rapidez e alta precisão.
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-green-500/20 hover:-translate-y-3 hover:border-green-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    🏭
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Montagem</li>
+                    <li>✔ Carregamento de Máquinas</li>
+                    <li>✔ Soldagem</li>
+                    <li>✔ Fundição</li>
+                    <li>✔ Movimentação de Materiais</li>
+                </ul>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-green-500/20 hover:-translate-y-3 hover:border-green-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 100.000
+                    <br><br>
+                    até
+                    <br><br>
+                    R$ 500.000
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-green-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-green-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-green-500/20 text-white">
+                    KUKA
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-green-500/20 text-white">
+                    Yaskawa
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-green-500/20 text-white">
+                    Kawasaki
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="delta" class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[6px] text-purple-400 font-semibold">
+                Automação Industrial
+            </span>
+
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-purple-400">Delta</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                O robô Delta é referência quando o assunto é velocidade e precisão,
+                sendo amplamente utilizado em processos de embalagem,
+                classificação e movimentação de pequenos produtos.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div class="absolute w-96 h-96 bg-purple-500 rounded-full blur-[150px] opacity-20"></div>
+
+                <img
+                    src="./img/delta.png"
+                    alt="Robô Delta"
+                    class="relative w-[500px] hover:scale-105 transition duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white">
+                    O que é?
+                </h3>
+
+                <p class="text-gray-400 mt-6 leading-8">
+                    O robô Delta possui uma estrutura paralela composta por três
+                    ou quatro braços conectados a uma base superior. Seu baixo
+                    peso em movimento permite acelerações extremamente altas,
+                    tornando-o ideal para operações rápidas e repetitivas.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-purple-500/20">
+                        <h4 class="text-purple-400 font-bold">
+                            Velocidade
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Extremamente Alta
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-purple-500/20">
+                        <h4 class="text-purple-400 font-bold">
+                            Precisão
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Excelente
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-purple-500/20">
+                        <h4 class="text-purple-400 font-bold">
+                            Estrutura
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Braços Paralelos
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-purple-500/20">
+                        <h4 class="text-purple-400 font-bold">
+                            Controle
+                        </h4>
+                        <p class="text-gray-300 mt-3">
+                            Motores Superiores
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-purple-500/20 hover:-translate-y-3 hover:border-purple-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    ⚙️
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Funcionamento
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    Os motores localizados na parte superior movimentam
+                    simultaneamente os braços paralelos. Um controlador
+                    sincroniza todos os movimentos para posicionar o efetuador
+                    com extrema rapidez e precisão.
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-purple-500/20 hover:-translate-y-3 hover:border-purple-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    📦
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Pick and Place</li>
+                    <li>✔ Embalagens</li>
+                    <li>✔ Classificação</li>
+                    <li>✔ Inspeção</li>
+                    <li>✔ Montagem de Componentes</li>
+                </ul>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-purple-500/20 hover:-translate-y-3 hover:border-purple-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 120.000
+                    <br><br>
+                    até
+                    <br><br>
+                    R$ 600.000
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-purple-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-purple-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-purple-500/20 text-white">
+                    Omron
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-purple-500/20 text-white">
+                    Codian
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-purple-500/20 text-white">
+                    Bosch Rexroth
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="polar" class="py-32 bg-[#020617]">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+
+            <span class="uppercase tracking-[6px] text-red-400 font-semibold">
+                Automação Industrial
+            </span>
+
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robô <span class="text-red-400">Polar</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                O robô polar possui uma área de trabalho esférica, oferecendo
+                amplo alcance e excelente flexibilidade para operações
+                industriais complexas.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative flex justify-center">
+                <div class="absolute w-96 h-96 bg-red-500 rounded-full blur-[150px] opacity-20"></div>
+                <img
+                    src="./img/polar.png"
+                    alt="Robô Polar"
+                    class="relative w-[520px] hover:scale-105 transition duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white">
+                    O que é?
+                </h3>
+
+                <p class="text-gray-400 mt-6 leading-8">
+                    O robô polar, também conhecido como robô esférico, utiliza
+                    movimentos rotacionais combinados com um eixo linear,
+                    permitindo alcançar diferentes posições dentro de uma área
+                    de trabalho em formato esférico.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-red-500/20">
+                        <h4 class="text-red-400 font-bold">
+                            Área de Trabalho
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Esférica
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-red-500/20">
+                        <h4 class="text-red-400 font-bold">
+                            Alcance
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Muito Alto
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-red-500/20">
+                        <h4 class="text-red-400 font-bold">
+                            Movimento
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Rotacional + Linear
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-red-500/20">
+                        <h4 class="text-red-400 font-bold">
+                            Precisão
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Elevada
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-red-500/20 hover:-translate-y-3 hover:border-red-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    ⚙️
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Funcionamento
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    Seus motores controlam movimentos rotacionais e lineares,
+                    permitindo que o braço alcance diversos pontos dentro de um
+                    espaço tridimensional com grande flexibilidade.
+                </p>
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-red-500/20 hover:-translate-y-3 hover:border-red-400 transition duration-300">
+
+                <div class="text-5xl mb-5">
+                    🏭
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Soldagem</li>
+                    <li>✔ Pintura Industrial</li>
+                    <li>✔ Fundição</li>
+                    <li>✔ Manipulação de Materiais</li>
+                    <li>✔ Pesquisa e Desenvolvimento</li>
+                </ul>
+
+            </div>
+
+            <div
+                class="bg-slate-900 rounded-3xl p-8 border border-red-500/20 hover:-translate-y-3 hover:border-red-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 180.000
+                    <br><br>
+                    até
+                    <br><br>
+                    R$ 900.000
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    KUKA
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    Yaskawa
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    Kawasaki
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-red-500/20 text-white">
+                    Mitsubishi
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cobots" class="py-32 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-20">
+            <span class="uppercase tracking-[6px] text-yellow-400 font-semibold">
+                Indústria 4.0
+            </span>
+
+            <h2 class="text-5xl font-extrabold text-white mt-4">
+                Robôs <span class="text-yellow-400">Colaborativos (Cobots)</span>
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto leading-8">
+                Os Cobots foram desenvolvidos para trabalhar lado a lado com os
+                seres humanos, aumentando a produtividade, a segurança e a
+                flexibilidade dos processos industriais.
+            </p>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="relative flex justify-center">
+                <div class="absolute w-96 h-96 bg-yellow-500 rounded-full blur-[150px] opacity-20"></div>
+                <img
+                    src="./img/cobot.png"
+                    alt="Robô Colaborativo"
+                    class="relative w-[520px] hover:scale-105 transition duration-500">
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-bold text-white">
+                    O que é um Cobot?
+                </h3>
+
+                <p class="text-gray-400 mt-6 leading-8">
+                    Diferentemente dos robôs industriais tradicionais, os Cobots
+                    foram projetados para compartilhar o mesmo espaço de trabalho
+                    com operadores humanos. Eles possuem sensores inteligentes
+                    que detectam obstáculos e reduzem ou interrompem seus
+                    movimentos quando necessário, proporcionando um ambiente de
+                    trabalho mais seguro.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mt-10">
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-yellow-500/20">
+                        <h4 class="text-yellow-400 font-bold">
+                            Segurança
+                        </h4>
+                        
+                        <p class="text-gray-300 mt-3">
+                            Muito Alta
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-yellow-500/20">
+                        <h4 class="text-yellow-400 font-bold">
+                            Flexibilidade
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Excelente
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-yellow-500/20">
+                        <h4 class="text-yellow-400 font-bold">
+                            Programação
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Simples
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 border border-yellow-500/20">
+
+                        <h4 class="text-yellow-400 font-bold">
+                            Trabalho
+                        </h4>
+
+                        <p class="text-gray-300 mt-3">
+                            Humano + Robô
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 mt-24">
+            <div class="bg-slate-900 rounded-3xl p-8 border border-yellow-500/20 hover:-translate-y-3 hover:border-yellow-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    🤝
+                </div>
+
+                <h3 class="text-2xl text-white font-bold">
+                    Colaboração
+                </h3>
+
+                <p class="text-gray-400 mt-5 leading-8">
+                    Sensores inteligentes monitoram constantemente o ambiente,
+                    permitindo que o robô trabalhe com pessoas de forma segura,
+                    reduzindo riscos de acidentes.
+                </p>
+            </div>
+            
+            <div class="bg-slate-900 rounded-3xl p-8 border border-yellow-500/20 hover:-translate-y-3 hover:border-yellow-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    🏭
+                </div>
+                <h3 class="text-2xl text-white font-bold">
+                    Aplicações
+                </h3>
+                <ul class="text-gray-400 mt-5 space-y-3">
+                    <li>✔ Montagem</li>
+                    <li>✔ Inspeção de Qualidade</li>
+                    <li>✔ Embalagem</li>
+                    <li>✔ Paletização</li>
+                    <li>✔ Alimentação de Máquinas</li>
+                    <li>✔ Laboratórios</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl p-8 border border-yellow-500/20 hover:-translate-y-3 hover:border-yellow-400 transition duration-300">
+                <div class="text-5xl mb-5">
+                    💰
+                </div>
+                <h3 class="text-2xl text-white font-bold">
+                    Faixa de Preço
+                </h3>
+                <p class="text-gray-400 mt-5 text-lg">
+                    R$ 120.000
+                    <br><br>
+                    até
+                    <br><br>
+                    R$ 500.000+
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white mb-12">
+                Principais Benefícios
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-slate-900 rounded-2xl p-8 border border-yellow-500/20 text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-white font-bold text-xl">Segurança</h3>
+                    <p class="text-gray-400 mt-3">
+                        Sensores evitam colisões durante o trabalho.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl p-8 border border-yellow-500/20 text-center">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-white font-bold text-xl">Produtividade</h3>
+                    <p class="text-gray-400 mt-3">
+                        Aumentam a eficiência dos processos industriais.
+                    </p>
+                </div>
+
+
+                <div class="bg-slate-900 rounded-2xl p-8 border border-yellow-500/20 text-center">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-white font-bold text-xl">Flexibilidade</h3>
+                    <p class="text-gray-400 mt-3">
+                        Podem ser reprogramados rapidamente para novas tarefas.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl p-8 border border-yellow-500/20 text-center">
+                    <div class="text-5xl mb-4">👨‍🏭</div>
+                    <h3 class="text-white font-bold text-xl">Cooperação</h3>
+                    <p class="text-gray-400 mt-3">
+                        Trabalham lado a lado com operadores humanos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <h2 class="text-center text-4xl font-bold text-white">
+                Principais Fabricantes
+            </h2>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    Universal Robots
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    FANUC
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    ABB
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    KUKA
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    Doosan Robotics
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-center border border-yellow-500/20 text-white">
+                    Techman Robot
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
