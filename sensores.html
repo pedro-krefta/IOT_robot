@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SensorTech | Catálogo de Sensores IoT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="./sensores.js"defer></script>
+
+</head>
+
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+
+    <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[160px]"></div>
+        <div class="absolute top-[35%] -right-40 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px]"></div>
+        <div class="absolute bottom-0 left-1/3 w-[450px] h-[450px] bg-blue-700/10 rounded-full blur-[170px]"></div>
+    </div>
+
+    <header class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl border-b border-blue-500/20">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl lg:text-3xl font-extrabold tracking-tight">
+                Sensor<span class="text-blue-500">Tech</span>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <li><a href="#inicio" class="text-gray-300 hover:text-blue-400 transition">Início</a></li>
+                <li><a href="#arduino" class="text-gray-300 hover:text-blue-400 transition">Arduino</a></li>
+                <li><a href="#sensores" class="text-gray-300 hover:text-blue-400 transition">Sensores</a></li>
+            </ul>
+
+            <button class="menu-toggle lg:hidden" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <ul class="nav-links lg:hidden" id="mobileMenu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#arduino">Arduino</a></li>
+            <li><a href="#sensores">Sensores</a></li>
+        </ul>
+    </header>
+
+    <section id="inicio" class="min-h-screen flex items-center pt-28 pb-20 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <div class="hero-content">
+                <span class="inline-flex items-center gap-2 bg-blue-600/10 text-blue-300 px-5 py-2 rounded-full border border-blue-500/30 text-sm font-medium">
+                    📡 IoT & Indústria 4.0
+                </span>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] mt-8">
+                    Conheça o
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-700">
+                        Futuro dos Sensores
+                    </span>
+                    <span class="block text-white">IoT</span>
+                </h1>
+
+                <p class="text-gray-400 text-base lg:text-lg mt-8 max-w-2xl leading-8">
+                    Explore os principais sensores utilizados em projetos de Internet das Coisas,
+                    automação e Indústria 4.0. Descubra seu funcionamento, especificações,
+                    aplicações e integração com Arduino.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="#sensores"
+                       class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold transition duration-300 shadow-lg shadow-blue-600/20">
+                        Explorar sensores →
+                    </a>
+
+                    <a href="#arduino"
+                       class="px-7 py-3.5 rounded-xl border border-blue-500/30 bg-slate-900/60 hover:bg-slate-800 text-gray-200 font-semibold transition duration-300">
+                        Ver Arduino
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center">
+                <div class="absolute w-72 h-72 lg:w-[450px] lg:h-[450px] bg-blue-600/30 rounded-full blur-[120px]"></div>
+                <div class="absolute w-48 h-48 bg-cyan-400/20 rounded-full blur-[90px]"></div>
+
+                <img src="./img/sensor_ilustracao.png"
+                     alt="Sensores IoT"
+                     class="relative w-full max-w-[550px] object-contain drop-shadow-2xl hover:scale-105 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-24">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-7">
+
+            <div class="stat-card group">
+                <div class="text-4xl mb-3">📡</div>
+                <h3 class="text-4xl lg:text-5xl font-bold text-blue-500">24</h3>
+                <p>Sensores Catalogados</p>
+            </div>
+
+            <div class="stat-card group">
+                <div class="text-4xl mb-3">🗂️</div>
+                <h3 class="text-4xl lg:text-5xl font-bold text-blue-500">6</h3>
+                <p>Categorias</p>
+            </div>
+
+            <div class="stat-card group">
+                <div class="text-4xl mb-3">💻</div>
+                <h3 class="text-4xl lg:text-5xl font-bold text-blue-500">10+</h3>
+                <p>Exemplos de Código</p>
+            </div>
+
+            <div class="stat-card group">
+                <div class="text-4xl mb-3">🏭</div>
+                <h3 class="text-4xl lg:text-5xl font-bold text-blue-500">4.0</h3>
+                <p>Indústria Inteligente</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="arduino" class="py-28 lg:py-32 bg-slate-900/50 border-y border-blue-500/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-16 lg:mb-20">
+                <span class="section-label text-blue-400">PLATAFORMA OPEN-SOURCE</span>
+                <h2 class="section-title">
+                    Arduino <span class="text-blue-500">e Programação</span>
+                </h2>
+                <p class="section-description">
+                    Entenda como o Arduino funciona e como ele pode ser utilizado
+                    para conectar sensores ao mundo físico.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <div class="relative flex justify-center order-2 lg:order-1">
+                    <div class="absolute w-80 h-80 bg-blue-600/20 blur-[120px] rounded-full"></div>
+                    <div class="relative p-6 lg:p-10 rounded-3xl border border-blue-500/20 bg-slate-950/60 backdrop-blur">
+                        <img src="./img/arduino_uno.png"
+                             alt="Arduino Uno"
+                             class="w-full max-w-[430px] hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-blue-400 font-semibold text-sm">TECNOLOGIA DE PROTOTIPAGEM</span>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white mt-3 mb-6">
+                        O que é o Arduino?
+                    </h3>
+
+                    <p class="text-gray-400 leading-8">
+                        O Arduino é uma placa de desenvolvimento baseada em microcontroladores
+                        que facilita a criação de projetos eletrônicos. Ele é programado em
+                        uma linguagem baseada em C/C++ através da IDE Arduino e possui entradas
+                        e saídas digitais e analógicas para conectar sensores, motores, LEDs
+                        e outros componentes.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="info-card">
+                            <span>Modelos</span>
+                            <strong>Uno, Mega, Nano</strong>
+                        </div>
+                        <div class="info-card">
+                            <span>Linguagem</span>
+                            <strong>C/C++</strong>
+                        </div>
+                        <div class="info-card">
+                            <span>Pinos</span>
+                            <strong>14 + 6</strong>
+                        </div>
+                        <div class="info-card">
+                            <span>Comunicação</span>
+                            <strong>UART • I2C • SPI</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 lg:mt-24 code-panel">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-blue-400 text-sm font-semibold">EXEMPLO PRÁTICO</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">📟 Arduino + DHT11</h3>
+                    </div>
+                    <span class="text-xs text-gray-500 bg-slate-950 px-3 py-2 rounded-lg border border-white/5">
+                        C / C++
+                    </span>
+                </div>
+
+                <p class="text-gray-400 mb-5">
+                    Leitura de temperatura e umidade utilizando o sensor DHT11.
+                </p>
+
+                <div class="code-block">
+                    <pre><code>#include &lt;DHT.h&gt;
+
+#define DHTPIN 2
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+
+  Serial.print("Umidade: ");
+  Serial.print(h);
+  Serial.print(" %	");
+  Serial.print("Temperatura: ");
+  Serial.print(t);
+  Serial.println(" °C");
+
+  delay(2000);
+}</code></pre>
+                </div>
+
+                <p class="text-gray-500 mt-4 text-sm">
+                    ▶️ O código realiza uma leitura a cada 2 segundos e exibe os valores no Monitor Serial.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 mt-6">
+                <div class="mini-code-card">
+                    <h4>🌡️ LM35</h4>
+                    <div class="code-block text-xs mt-4">
+                        <pre>int val = analogRead(A0);
+float temp = (val * 5.0 / 1023.0) * 100;</pre>
+                    </div>
+                </div>
+
+                <div class="mini-code-card">
+                    <h4>📏 HC-SR04</h4>
+                    <div class="code-block text-xs mt-4">
+                        <pre>digitalWrite(TRIG, HIGH);
+delayMicroseconds(10);
+digitalWrite(TRIG, LOW);
+long dur = pulseIn(ECHO, HIGH);
+float dist = dur * 0.034 / 2;</pre>
+                    </div>
+                </div>
+
+                <div class="mini-code-card">
+                    <h4>💡 BH1750</h4>
+                    <div class="code-block text-xs mt-4">
+                        <pre>#include &lt;Wire.h&gt;
+#include &lt;BH1750.h&gt;
+BH1750 lightMeter;
+float lux = lightMeter.readLightLevel();</pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="sensores" class="py-28 lg:py-32 bg-[#020617]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="text-center mb-14 lg:mb-20">
+                <span class="section-label text-cyan-400">CATÁLOGO TÉCNICO</span>
+                <h2 class="section-title">
+                    Sensores <span class="text-cyan-400">IoT</span>
+                </h2>
+                <p class="section-description">
+                    Explore os sensores do catálogo e consulte suas características,
+                    funcionamento, aplicações e exemplos.
+                </p>
+            </div>
+
+            <div class="filter-wrapper">
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                    <button class="filtro-btn" data-categoria="Temperatura e Umidade">🌡️ Temperatura/Umidade</button>
+                    <button class="filtro-btn" data-categoria="Temperatura">🌡️ Temperatura</button>
+                    <button class="filtro-btn" data-categoria="Luminosidade">💡 Luminosidade</button>
+                    <button class="filtro-btn" data-categoria="Distância">📏 Distância</button>
+                    <button class="filtro-btn" data-categoria="Movimento">🚶 Movimento</button>
+                    <button class="filtro-btn" data-categoria="Proximidade">🔍 Proximidade</button>
+                    <button class="filtro-btn" data-categoria="Gás">💨 Gás</button>
+                    <button class="filtro-btn" data-categoria="Chuva">☔ Chuva</button>
+                    <button class="filtro-btn" data-categoria="Fluxo">💧 Fluxo</button>
+                    <button class="filtro-btn" data-categoria="Corrente">⚡ Corrente</button>
+                    <button class="filtro-btn" data-categoria="Tensão">🔌 Tensão</button>
+                    <button class="filtro-btn" data-categoria="Vibração">📳 Vibração</button>
+                    <button class="filtro-btn" data-categoria="Rotação">🔄 Rotação</button>
+                    <button class="filtro-btn" data-categoria="RFID">📡 RFID</button>
+                    <button class="filtro-btn" data-categoria="Peso">⚖️ Peso</button>
+                    <button class="filtro-btn" data-categoria="Som">🔊 Som</button>
+                    <button class="filtro-btn" data-categoria="Chama">🔥 Chama</button>
+                    <button class="filtro-btn" data-categoria="Umidade">💦 Umidade</button>
+                    <button class="filtro-btn" data-categoria="Nível">📊 Nível</button>
+                </div>
+            </div>
+
+            <div id="sensorGrid"
+                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
+            </div>
+        </div>
+    </section>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+
+    <footer class="bg-black/50 border-t border-blue-500/10 py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-extrabold mb-3">
+                Sensor<span class="text-blue-500">Tech</span>
+            </div>
+            <p class="text-sm text-gray-500">
+                SensorTech © 2026 — Catálogo de Sensores IoT e Industriais
+            </p>
+            <p class="text-xs text-gray-600 mt-2">
+                Desenvolvido para a disciplina de Internet das Coisas — Curso Técnico em Desenvolvimento de Sistemas
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

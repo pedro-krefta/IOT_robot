@@ -1,0 +1,259 @@
+* {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background:
+            radial-gradient(circle at 15% 10%, rgba(37,99,235,.08), transparent 30%),
+            radial-gradient(circle at 85% 70%, rgba(6,182,212,.05), transparent 28%),
+            #020617;
+    }
+
+    ::selection {
+        background: rgba(37,99,235,.7);
+        color: white;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border: 1px solid rgba(59,130,246,.25);
+        border-radius: 12px;
+        background: rgba(15,23,42,.7);
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+        background: #93c5fd;
+        border-radius: 99px;
+    }
+
+    .nav-links {
+        padding: 14px 24px 20px;
+        background: rgba(2,6,23,.95);
+        border-top: 1px solid rgba(59,130,246,.1);
+    }
+
+    .nav-links li {
+        padding: 7px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        color: #cbd5e1;
+        transition: .25s;
+    }
+
+    .nav-links a:hover {
+        color: #60a5fa;
+        transform: translateX(4px);
+    }
+
+    .stat-card {
+        padding: 28px 20px;
+        text-align: center;
+        border-radius: 24px;
+        border: 1px solid rgba(59,130,246,.16);
+        background: rgba(15,23,42,.62);
+        backdrop-filter: blur(16px);
+        transition: .35s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(59,130,246,.5);
+        box-shadow: 0 20px 60px rgba(37,99,235,.12);
+    }
+
+    .stat-card p {
+        color: #94a3b8;
+        margin-top: 10px;
+        font-size: .9rem;
+    }
+
+    .section-label {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 700;
+        font-size: .78rem;
+    }
+
+    .section-title {
+        color: white;
+        font-size: clamp(2.3rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-top: 12px;
+        line-height: 1.1;
+    }
+
+    .section-description {
+        color: #94a3b8;
+        margin: 22px auto 0;
+        max-width: 760px;
+        line-height: 1.9;
+    }
+
+    .info-card {
+        background: rgba(15,23,42,.8);
+        border: 1px solid rgba(59,130,246,.16);
+        border-radius: 18px;
+        padding: 20px;
+        transition: .3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(59,130,246,.45);
+        background: rgba(15,23,42,.95);
+    }
+
+    .info-card span {
+        display: block;
+        color: #60a5fa;
+        font-size: .85rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .info-card strong {
+        color: #e2e8f0;
+        font-weight: 500;
+        font-size: .95rem;
+    }
+
+    .code-panel {
+        padding: 28px;
+        border-radius: 28px;
+        border: 1px solid rgba(59,130,246,.18);
+        background: rgba(15,23,42,.65);
+        box-shadow: 0 25px 80px rgba(0,0,0,.18);
+    }
+
+    .mini-code-card {
+        padding: 22px;
+        border-radius: 22px;
+        border: 1px solid rgba(59,130,246,.14);
+        background: rgba(15,23,42,.55);
+        transition: .3s ease;
+    }
+
+    .mini-code-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(59,130,246,.4);
+    }
+
+    .mini-code-card h4 {
+        color: #60a5fa;
+        font-weight: 700;
+    }
+
+    .code-block {
+        background: #020617;
+        border: 1px solid rgba(148,163,184,.1);
+        border-radius: 16px;
+        overflow: auto;
+    }
+
+    .code-block pre {
+        padding: 20px;
+        color: #cbd5e1;
+        font-family: Consolas, Monaco, monospace;
+        line-height: 1.7;
+        font-size: .85rem;
+        white-space: pre-wrap;
+    }
+
+    .filter-wrapper {
+        padding: 18px;
+        border: 1px solid rgba(59,130,246,.12);
+        border-radius: 24px;
+        background: rgba(15,23,42,.42);
+        backdrop-filter: blur(10px);
+    }
+
+    .filtro-btn {
+        color: #94a3b8;
+        background: rgba(15,23,42,.85);
+        border: 1px solid rgba(59,130,246,.16);
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-size: .85rem;
+        font-weight: 600;
+        transition: .25s ease;
+        cursor: pointer;
+    }
+
+    .filtro-btn:hover {
+        color: white;
+        border-color: rgba(59,130,246,.55);
+        background: rgba(30,64,175,.2);
+        transform: translateY(-2px);
+    }
+
+    .filtro-btn.active {
+        color: white;
+        background: linear-gradient(135deg, #2563eb, #0891b2);
+        border-color: transparent;
+        box-shadow: 0 8px 25px rgba(37,99,235,.2);
+    }
+
+    /* Melhora os cards criados pelo JavaScript sem alterar sua estrutura. */
+    #sensorGrid > * {
+        border-radius: 26px !important;
+        border: 1px solid rgba(59,130,246,.16) !important;
+        background: linear-gradient(145deg, rgba(15,23,42,.92), rgba(2,6,23,.88)) !important;
+        transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease !important;
+        overflow: hidden;
+    }
+
+    #sensorGrid > *:hover {
+        transform: translateY(-8px) !important;
+        border-color: rgba(59,130,246,.5) !important;
+        box-shadow: 0 25px 70px rgba(15,23,42,.5), 0 0 35px rgba(37,99,235,.08) !important;
+    }
+
+    .modal {
+        background: rgba(0,0,0,.78) !important;
+        backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+        background: #0f172a !important;
+        border: 1px solid rgba(59,130,246,.3);
+        border-radius: 28px !important;
+        box-shadow: 0 30px 100px rgba(0,0,0,.6);
+    }
+
+    .modal-close {
+        transition: .25s;
+    }
+
+    .modal-close:hover {
+        color: #60a5fa !important;
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 640px) {
+        .section-label {
+            letter-spacing: 3px;
+        }
+
+        .code-panel {
+            padding: 20px;
+            border-radius: 22px;
+        }
+
+        .filter-wrapper {
+            padding: 12px;
+        }
+    }
