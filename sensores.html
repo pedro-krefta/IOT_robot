@@ -262,6 +262,143 @@ float lux = lightMeter.readLightLevel();</pre>
                 </div>
             </div>
 
+            <div class="mt-20 lg:mt-24 text-center mb-14">
+                <span class="section-label text-blue-400">NA PRÁTICA</span>
+                <h2 class="section-title">
+                    Vídeos <span class="text-blue-500">Funcionando</span>
+                </h2>
+                <p class="section-description">
+                    Demonstrações reais dos projetos com Arduino, cada um com o código completo utilizado.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">💡 1. sensor de movimento com LED</h4>
+                    <div class="video-frame">
+                        <!-- Troque o src abaixo pelo caminho/URL do seu vídeo -->
+                        <video controls poster="">
+                            <source src="./videos/sensor_mov.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>int led = 13;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);
+  delay(1000);
+  digitalWrite(led, LOW);
+  delay(1000);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">🚦 2. Potenciometro</h4>
+                    <div class="video-frame">
+                        <video controls poster="">
+                            <source src="./videos/potenciometro.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>int vermelho = 8;
+int amarelo = 9;
+int verde = 10;
+
+void setup() {
+  pinMode(vermelho, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(verde, HIGH);
+  delay(3000);
+  digitalWrite(verde, LOW);
+
+  digitalWrite(amarelo, HIGH);
+  delay(1000);
+  digitalWrite(amarelo, LOW);
+
+  digitalWrite(vermelho, HIGH);
+  delay(3000);
+  digitalWrite(vermelho, LOW);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">🚶 4. Sensor PIR com LED de Alerta</h4>
+                    <div class="video-frame">
+                        <video controls poster="">
+                            <source src="./videos/sensor_luminosidade.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>int pinoPIR = 7;
+int led = 13;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(pinoPIR, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  int movimento = digitalRead(pinoPIR);
+
+  if (movimento == HIGH) {
+    digitalWrite(led, HIGH);
+    Serial.println("Movimento detectado!");
+  } else {
+    digitalWrite(led, LOW);
+  }
+
+  delay(200);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">🎚️ 5. projeto com esp</h4>
+                    <div class="video-frame">
+                        <video controls poster="">
+                            <source src="./videos/esp.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>#include &lt;Servo.h&gt;
+
+Servo meuServo;
+int pinoPot = A0;
+
+void setup() {
+  meuServo.attach(9);
+}
+
+void loop() {
+  int valor = analogRead(pinoPot);
+  int angulo = map(valor, 0, 1023, 0, 180);
+  meuServo.write(angulo);
+  delay(15);
+}</pre>
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
