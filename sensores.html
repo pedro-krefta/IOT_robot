@@ -82,14 +82,6 @@
                 </div>
             </div>
 
-            <div class="relative flex justify-center items-center">
-                <div class="absolute w-72 h-72 lg:w-[450px] lg:h-[450px] bg-blue-600/30 rounded-full blur-[120px]"></div>
-                <div class="absolute w-48 h-48 bg-cyan-400/20 rounded-full blur-[90px]"></div>
-
-                <img src="./img/sensor_ilustracao.png"
-                     alt="Sensores IoT"
-                     class="relative w-full max-w-[550px] object-contain drop-shadow-2xl hover:scale-105 transition duration-700">
-            </div>
         </div>
     </section>
 
@@ -284,72 +276,13 @@ float lux = lightMeter.readLightLevel();</pre>
                         </video>
                     </div>
                     <div class="code-block text-xs mt-4">
-                        <pre>int led = 13;
+                        <pre>const int pinoPIR = 7;
+const int led = 13;
 
 void setup() {
-  pinMode(led, OUTPUT);
-}
-
-void loop() {
-  digitalWrite(led, HIGH);
-  delay(1000);
-  digitalWrite(led, LOW);
-  delay(1000);
-}</pre>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <h4 class="text-lg font-bold text-white mb-3">🚦 2. Potenciometro</h4>
-                    <div class="video-frame">
-                        <video controls poster="">
-                            <source src="./videos/potenciometro.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeo.
-                        </video>
-                    </div>
-                    <div class="code-block text-xs mt-4">
-                        <pre>int vermelho = 8;
-int amarelo = 9;
-int verde = 10;
-
-void setup() {
-  pinMode(vermelho, OUTPUT);
-  pinMode(amarelo, OUTPUT);
-  pinMode(verde, OUTPUT);
-}
-
-void loop() {
-  digitalWrite(verde, HIGH);
-  delay(3000);
-  digitalWrite(verde, LOW);
-
-  digitalWrite(amarelo, HIGH);
-  delay(1000);
-  digitalWrite(amarelo, LOW);
-
-  digitalWrite(vermelho, HIGH);
-  delay(3000);
-  digitalWrite(vermelho, LOW);
-}</pre>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <h4 class="text-lg font-bold text-white mb-3">🚶 4. Sensor PIR com LED de Alerta</h4>
-                    <div class="video-frame">
-                        <video controls poster="">
-                            <source src="./videos/sensor_luminosidade.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeo.
-                        </video>
-                    </div>
-                    <div class="code-block text-xs mt-4">
-                        <pre>int pinoPIR = 7;
-int led = 13;
-
-void setup() {
-  Serial.begin(9600);
   pinMode(pinoPIR, INPUT);
   pinMode(led, OUTPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -368,7 +301,68 @@ void loop() {
                 </div>
 
                 <div class="video-card">
-                    <h4 class="text-lg font-bold text-white mb-3">🎚️ 5. projeto com esp</h4>
+                    <h4 class="text-lg font-bold text-white mb-3">🚦 2. Potenciometro</h4>
+                    <div class="video-frame">
+                        <video controls poster="">
+                            <source src="./videos/potenciometro.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>const int pinoPot = A0;
+const int led = 9;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valor = analogRead(pinoPot);
+  int brilho = map(valor, 0, 1023, 0, 255);
+
+  analogWrite(led, brilho);
+  Serial.println(valor);
+
+  delay(10);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">🚶 4. Sensor PIR com LED de Alerta</h4>
+                    <div class="video-frame">
+                        <video controls poster="">
+                            <source src="./videos/sensor_luminosidade.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeo.
+                        </video>
+                    </div>
+                    <div class="code-block text-xs mt-4">
+                        <pre>const int pinoPIR = 7;
+const int led = 13;
+
+void setup() {
+  pinMode(pinoPIR, INPUT);
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  bool movimento = digitalRead(pinoPIR);
+
+  digitalWrite(led, movimento);
+
+  if (movimento) {
+    Serial.println("Movimento detectado!");
+  }
+
+  delay(200);
+}</pre>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h4 class="text-lg font-bold text-white mb-3">🎚️ 5. Servo controlado por potenciômetro</h4>
                     <div class="video-frame">
                         <video controls poster="">
                             <source src="./videos/esp.mp4" type="video/mp4">
