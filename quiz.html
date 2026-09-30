@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | RoboTech & SensorTech</title>
+    <script src="quiz.js" defer></script>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-[Poppins,sans-serif] min-h-screen overflow-x-hidden bg-slate-950 text-slate-200">
+
+    <div class="fixed inset-0 -z-10">
+        <div class="absolute top-0 left-0 h-96 w-96 rounded-full bg-blue-600 opacity-30 blur-[180px]"></div>
+        <div class="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500 opacity-20 blur-[180px]"></div>
+    </div>
+
+    <header class="fixed top-0 z-50 w-full border-b border-blue-500/20 bg-black/40 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+            <h1 class="text-3xl font-extrabold text-white">Robo<span class="text-blue-500">Tech</span> Quiz</h1>
+            <ul class="flex gap-8 text-white">
+                <li><a href="./index.html" class="duration-300 hover:text-blue-400">Robôs</a></li>
+                <li><a href="./sensores.html" class="duration-300 hover:text-blue-400">Sensores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-6 pt-32 pb-20">
+
+        <!-- INTRODUÇÃO -->
+        <section id="intro">
+            <span class="rounded-full border border-blue-500 bg-blue-600/20 px-5 py-2 text-sm text-blue-300">🎯 Desafio final • Modelo ENEM</span>
+            <h2 class="mt-8 text-5xl leading-tight font-extrabold text-white">
+                Teste o que você aprendeu sobre
+                <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-blue-700 bg-clip-text text-transparent">Robótica e IoT</span>
+            </h2>
+            <p class="mt-6 leading-8 text-gray-400">
+                São 10 questões contextualizadas com 4 alternativas cada, cobrindo robôs industriais, sensores,
+                multímetro, Arduino, ESP32 e código. Leia o contexto, identifique o problema e escolha a melhor resposta.
+            </p>
+            <button id="btn-start" class="mt-8 cursor-pointer rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 font-semibold text-white duration-200 hover:scale-105">
+                Começar quiz →
+            </button>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="quiz" class="hidden">
+            <div class="flex justify-between text-sm text-slate-400">
+                <span id="cnt"></span>
+                <span id="pts"></span>
+            </div>
+            <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-900">
+                <div id="pb" class="h-full w-0 bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-500"></div>
+            </div>
+
+            <div id="q" class="mt-6 rounded-3xl border border-blue-500/20 bg-slate-900/70 p-8 backdrop-blur-lg"></div>
+
+            <button id="ok" disabled class="mt-6 cursor-pointer rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 font-semibold text-white duration-200 hover:scale-105 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:scale-100">
+                Confirmar resposta
+            </button>
+            <button id="nx" class="mt-6 hidden cursor-pointer rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 font-semibold text-white duration-200 hover:scale-105">
+                Próxima →
+            </button>
+        </section>
+
+        <!-- RESULTADO -->
+        <section id="end" class="hidden">
+            <div class="rounded-3xl border border-blue-500/20 bg-slate-900/70 p-8 text-center backdrop-blur-lg">
+                <span class="rounded-full border border-blue-500 bg-blue-600/20 px-5 py-2 text-sm text-blue-300">Resultado final</span>
+                <div id="sc" class="mt-6 text-7xl font-extrabold text-blue-500"></div>
+                <p id="msg" class="mt-2 leading-8 text-gray-400"></p>
+                <div id="rev" class="mt-8 text-left"></div>
+                <button id="btn-restart" class="mt-8 cursor-pointer rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 font-semibold text-white duration-200 hover:scale-105">
+                    Refazer quiz ↺
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
