@@ -16,7 +16,7 @@ const sensores = [
         tipoSinal: "Digital (One-Wire)",
         aplicacoes: "Estações meteorológicas, climatização, estufas, monitoramento ambiental",
         exemploProjeto: "Monitoramento de temperatura/umidade em estufa com alertas via IoT",
-        imagem: "./img/dht11.jpg",
+        imagem: "./img/DHT11.webp",
         fabricantes: "AOSONG, Adafruit, SparkFun",
         codigo: `#include <DHT.h>\n#define DHTPIN 2\n#define DHTTYPE DHT11\nDHT dht(DHTPIN, DHTTYPE);\n\nvoid setup() {\n  Serial.begin(9600);\n  dht.begin();\n}\n\nvoid loop() {\n  float h = dht.readHumidity();\n  float t = dht.readTemperature();\n  Serial.print("Umidade: ");\n  Serial.print(h);\n  Serial.print(" %\\t");\n  Serial.print("Temperatura: ");\n  Serial.print(t);\n  Serial.println(" °C");\n  delay(2000);\n}`
     },
@@ -30,7 +30,7 @@ const sensores = [
         tipoSinal: "Digital (One-Wire)",
         aplicacoes: "Monitoramento ambiental preciso, refrigeração, laboratórios",
         exemploProjeto: "Sistema de monitoramento em câmaras frias",
-        imagem: "./img/dht22.jpg",
+        imagem: "./img/DHT22.webp",
         fabricantes: "AOSONG, Adafruit, SparkFun",
         codigo: `#include <DHT.h>\n#define DHTPIN 2\n#define DHTTYPE DHT22\nDHT dht(DHTPIN, DHTTYPE);\n\nvoid setup() {\n  Serial.begin(9600);\n  dht.begin();\n}\n\nvoid loop() {\n  float h = dht.readHumidity();\n  float t = dht.readTemperature();\n  Serial.print("Umidade: ");\n  Serial.print(h);\n  Serial.print(" %\\t");\n  Serial.print("Temperatura: ");\n  Serial.print(t);\n  Serial.println(" °C");\n  delay(2000);\n}`
     },
@@ -46,7 +46,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Controle industrial, sistemas de aquecimento, monitoramento de motores",
         exemploProjeto: "Controle de temperatura em fornos industriais",
-        imagem: "./img/lm35.jpg",
+        imagem: "./img/LM35.jpg",
         fabricantes: "Texas Instruments, National Semiconductor",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int valor = analogRead(A0);\n  float temp = (valor * 5.0 / 1023.0) * 100;\n  Serial.print("Temperatura: ");\n  Serial.print(temp);\n  Serial.println(" °C");\n  delay(1000);\n}`
     },
@@ -60,7 +60,7 @@ const sensores = [
         tipoSinal: "Digital (One-Wire)",
         aplicacoes: "Monitoramento de líquidos, ambientes, sistemas de refrigeração",
         exemploProjeto: "Monitoramento multiponto em reservatórios",
-        imagem: "./img/ds18b20.jpg",
+        imagem: "./img/DS18B20.avif",
         fabricantes: "Maxim Integrated, Adafruit",
         codigo: `#include <OneWire.h>\n#include <DallasTemperature.h>\n#define PINO 2\nOneWire oneWire(PINO);\nDallasTemperature sensors(&oneWire);\n\nvoid setup() {\n  Serial.begin(9600);\n  sensors.begin();\n}\n\nvoid loop() {\n  sensors.requestTemperatures();\n  float temp = sensors.getTempCByIndex(0);\n  Serial.print("Temp: ");\n  Serial.print(temp);\n  Serial.println(" °C");\n  delay(1000);\n}`
     },
@@ -76,7 +76,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Controle automático de iluminação, sistemas de segurança",
         exemploProjeto: "Acionamento automático de iluminação pública",
-        imagem: "./img/ldr.jpg",
+        imagem: "./img/LDR.webp",
         fabricantes: "Componente genérico",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int valor = analogRead(A0);\n  int lumin = map(valor, 0, 1023, 100, 0);\n  Serial.print("Luminosidade: ");\n  Serial.print(lumin);\n  Serial.println("%");\n  delay(500);\n}`
     },
@@ -90,7 +90,7 @@ const sensores = [
         tipoSinal: "I2C",
         aplicacoes: "Iluminação inteligente, agricultura de precisão, museus",
         exemploProjeto: "Controle de luminosidade em estufas",
-        imagem: "./img/bh1750.jpg",
+        imagem: "./img/BH1750.webp",
         fabricantes: "ROHM Semiconductor",
         codigo: `#include <Wire.h>\n#include <BH1750.h>\nBH1750 lightMeter;\n\nvoid setup() {\n  Serial.begin(9600);\n  Wire.begin();\n  lightMeter.begin();\n}\n\nvoid loop() {\n  float lux = lightMeter.readLightLevel();\n  Serial.print("Lux: ");\n  Serial.println(lux);\n  delay(1000);\n}`
     },
@@ -106,7 +106,7 @@ const sensores = [
         tipoSinal: "Digital (PWM)",
         aplicacoes: "Detecção de obstáculos, robótica, estacionamento, drones",
         exemploProjeto: "Robô seguidor de parede",
-        imagem: "./img/hc-sr04.jpg",
+        imagem: "./img/HC-SR04.webp",
         fabricantes: "Componente genérico",
         codigo: `#define TRIG 9\n#define ECHO 10\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(TRIG, OUTPUT);\n  pinMode(ECHO, INPUT);\n}\n\nvoid loop() {\n  digitalWrite(TRIG, LOW);\n  delayMicroseconds(2);\n  digitalWrite(TRIG, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(TRIG, LOW);\n  long dur = pulseIn(ECHO, HIGH);\n  float dist = dur * 0.034 / 2;\n  Serial.print("Distância: ");\n  Serial.print(dist);\n  Serial.println(" cm");\n  delay(500);\n}`
     },
@@ -122,7 +122,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Segurança, iluminação automática, automação residencial",
         exemploProjeto: "Iluminação automática em corredores",
-        imagem: "./img/pir.jpg",
+        imagem: "./img/PIR HC-SR501.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pinoPIR = 8;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pinoPIR, INPUT);\n}\n\nvoid loop() {\n  if (digitalRead(pinoPIR)) Serial.println("Movimento!");\n  else Serial.println("Parado");\n  delay(100);\n}`
     },
@@ -138,7 +138,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Detecção de peças metálicas, controle de posição, contagem",
         exemploProjeto: "Contagem de peças em esteira",
-        imagem: "./img/lj12a3.jpg",
+        imagem: "./img/Sensor Indutivo LJ12A3.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pino = 7;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pino, INPUT);\n}\n\nvoid loop() {\n  if (digitalRead(pino)) Serial.println("Metal detectado!");\n  else Serial.println("Sem metal");\n  delay(200);\n}`
     },
@@ -154,7 +154,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Alarme de incêndio, qualidade do ar, segurança",
         exemploProjeto: "Sistema de alarme com notificação SMS",
-        imagem: "./img/mq2.jpg",
+        imagem: "./img/MQ-2.jpg",
         fabricantes: "Componente genérico",
         codigo: `int sensor = A0;\n\nvoid setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(sensor);\n  Serial.print("Gás: ");\n  Serial.println(val);\n  if (val > 300) Serial.println("ALERTA!");\n  delay(500);\n}`
     },
@@ -168,7 +168,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Qualidade do ar, ventilação, IoT",
         exemploProjeto: "Monitoramento de ar em ambientes fechados",
-        imagem: "./img/mq135.jpg",
+        imagem: "./img/MQ-135.jpg",
         fabricantes: "Componente genérico",
         codigo: `int sensor = A0;\n\nvoid setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(sensor);\n  Serial.print("Ar: ");\n  Serial.println(val);\n  if (val > 400) Serial.println("Qualidade prejudicada!");\n  delay(1000);\n}`
     },
@@ -184,7 +184,7 @@ const sensores = [
         tipoSinal: "Analógico/Digital",
         aplicacoes: "Irrigação, estações meteorológicas, automação",
         exemploProjeto: "Fechamento automático de toldos",
-        imagem: "./img/fc37.jpg",
+        imagem: "./img/FC-37.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pinDig = 7;\nint pinAn = A0;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pinDig, INPUT);\n}\n\nvoid loop() {\n  int an = analogRead(pinAn);\n  int dig = digitalRead(pinDig);\n  Serial.print(an); Serial.print(" | "); Serial.println(dig);\n  if (dig == LOW) Serial.println("Chuva!");\n  delay(500);\n}`
     },
@@ -200,7 +200,7 @@ const sensores = [
         tipoSinal: "Digital (Pulsos)",
         aplicacoes: "Irrigação, medição de consumo, automação",
         exemploProjeto: "Monitoramento de consumo residencial",
-        imagem: "./img/yfs201.jpg",
+        imagem: "./img/YF-S201.webp",
         fabricantes: "Sea YF-S201, DFRobot",
         codigo: `volatile int pulsos = 0;\nunsigned long ant = 0;\n\nvoid setup() {\n  Serial.begin(9600);\n  attachInterrupt(0, contar, RISING);\n}\n\nvoid loop() {\n  if (millis() - ant >= 1000) {\n    float vazao = pulsos / 450.0 * 60;\n    Serial.print("Vazão: "); Serial.print(vazao); Serial.println(" L/min");\n    pulsos = 0; ant = millis();\n  }\n}\n\nvoid contar() { pulsos++; }`
     },
@@ -216,7 +216,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Monitoramento de consumo, proteção de circuitos, IoT",
         exemploProjeto: "Monitoramento energético de máquina",
-        imagem: "./img/acs712.jpg",
+        imagem: "./img/ACS712.jpg",
         fabricantes: "Allegro MicroSystems",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(A0);\n  float I = (val - 512) * 5.0 / 1023.0 / 0.100;\n  Serial.print("Corrente: "); Serial.print(I); Serial.println(" A");\n  delay(500);\n}`
     },
@@ -232,7 +232,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Monitoramento de tensão, qualidade de energia",
         exemploProjeto: "Sistema de monitoramento de qualidade de energia",
-        imagem: "./img/zmpt101b.jpg",
+        imagem: "./img/ZMPT101B.webp",
         fabricantes: "ZMPT101B",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(A0);\n  float V = (val / 1023.0) * 220;\n  Serial.print("Tensão: "); Serial.print(V); Serial.println(" V");\n  delay(500);\n}`
     },
@@ -248,7 +248,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Monitoramento de máquinas, anti-furto, análise de vibração",
         exemploProjeto: "Monitoramento de vibração em motores",
-        imagem: "./img/sw420.jpg",
+        imagem: "./img/SW-420.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pino = 7;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pino, INPUT);\n}\n\nvoid loop() {\n  if (digitalRead(pino)) Serial.println("Vibração!");\n  else Serial.println("Parado");\n  delay(100);\n}`
     },
@@ -264,7 +264,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Medição de RPM, sistemas de posicionamento, tacômetros",
         exemploProjeto: "Medidor de RPM de motor",
-        imagem: "./img/hall.jpg",
+        imagem: "./img/Hall A3144.jpg",
         fabricantes: "Allegro MicroSystems",
         codigo: `volatile int pulsos = 0;\nunsigned long ant = 0;\n\nvoid setup() {\n  Serial.begin(9600);\n  attachInterrupt(0, contar, FALLING);\n}\n\nvoid loop() {\n  if (millis() - ant >= 1000) {\n    float rpm = pulsos * 60.0 / 2.0;\n    Serial.print("RPM: "); Serial.println(rpm);\n    pulsos = 0; ant = millis();\n  }\n}\n\nvoid contar() { pulsos++; }`
     },
@@ -280,7 +280,7 @@ const sensores = [
         tipoSinal: "SPI",
         aplicacoes: "Controle de acesso, pagamento, identificação, rastreamento",
         exemploProjeto: "Sistema de controle de acesso com cartão RFID",
-        imagem: "./img/mfrc522.jpg",
+        imagem: "./img/MFRC522.webp",
         fabricantes: "NXP Semiconductors",
         codigo: `#include <SPI.h>\n#include <MFRC522.h>\n#define SS 10\n#define RST 9\nMFRC522 mfrc522(SS, RST);\n\nvoid setup() {\n  Serial.begin(9600);\n  SPI.begin();\n  mfrc522.PCD_Init();\n}\n\nvoid loop() {\n  if (!mfrc522.PICC_IsNewCardPresent()) return;\n  if (!mfrc522.PICC_ReadCardSerial()) return;\n  Serial.print("UID: ");\n  for (byte i = 0; i < mfrc522.uid.size; i++) {\n    Serial.print(mfrc522.uid.uidByte[i], HEX);\n  }\n  Serial.println();\n  delay(1000);\n}`
     },
@@ -296,7 +296,7 @@ const sensores = [
         tipoSinal: "Digital (Serial)",
         aplicacoes: "Balanças industriais, controle de estoque, agricultura",
         exemploProjeto: "Balança industrial para controle de produção",
-        imagem: "./img/hx711.jpg",
+        imagem: "./img/Célula de Carga + HX711.jpg",
         fabricantes: "Componente genérico",
         codigo: `#include "HX711.h"\nHX711 balanca;\n\nvoid setup() {\n  Serial.begin(9600);\n  balanca.begin(2, 3);\n  balanca.set_scale();\n  balanca.tare();\n}\n\nvoid loop() {\n  float peso = balanca.get_units(3);\n  Serial.print("Peso: "); Serial.print(peso); Serial.println(" kg");\n  delay(500);\n}`
     },
@@ -312,7 +312,7 @@ const sensores = [
         tipoSinal: "Analógico/Digital",
         aplicacoes: "Monitoramento de ruído, alarmes, automação",
         exemploProjeto: "Monitoramento de ruído industrial",
-        imagem: "./img/ky037.jpg",
+        imagem: "./img/KY-037.jpg",
         fabricantes: "Componente genérico",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(A0);\n  Serial.print("Som: "); Serial.println(val);\n  if (val > 400) Serial.println("Ruído alto!");\n  delay(100);\n}`
     },
@@ -328,7 +328,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Detecção de incêndio, segurança industrial",
         exemploProjeto: "Alarme de incêndio com notificação remota",
-        imagem: "./img/chama.jpg",
+        imagem: "./img/Sensor de Chama IR.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pino = 7;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pino, INPUT);\n}\n\nvoid loop() {\n  if (digitalRead(pino) == LOW) Serial.println("Chama detectada!");\n  else Serial.println("Sem chama");\n  delay(200);\n}`
     },
@@ -344,7 +344,7 @@ const sensores = [
         tipoSinal: "Analógico",
         aplicacoes: "Agricultura inteligente, irrigação, jardinagem",
         exemploProjeto: "Sistema de irrigação automática",
-        imagem: "./img/umidade-solo.jpg",
+        imagem: "./img/Sensor Capacitivo de Umidade do Solo.webp",
         fabricantes: "Componente genérico",
         codigo: `void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int val = analogRead(A0);\n  int umid = map(val, 0, 1023, 0, 100);\n  Serial.print("Umidade: "); Serial.print(umid); Serial.println("%");\n  delay(1000);\n}`
     },
@@ -360,7 +360,7 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Controle de bombas, reservatórios, sistemas de abastecimento",
         exemploProjeto: "Controle automático de bomba d'água",
-        imagem: "./img/nivel-boia.jpg",
+        imagem: "./img/Sensor de Nível.jpg",
         fabricantes: "Componente genérico",
         codigo: `int pino = 7;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(pino, INPUT_PULLUP);\n}\n\nvoid loop() {\n  if (digitalRead(pino) == LOW) Serial.println("Nível baixo - Acionar bomba");\n  else Serial.println("Nível alto - Desligar bomba");\n  delay(1000);\n}`
     },
@@ -376,11 +376,11 @@ const sensores = [
         tipoSinal: "Digital",
         aplicacoes: "Controle de posição, painéis, robótica, sistemas de navegação",
         exemploProjeto: "Controle de posição de braço robótico",
-        imagem: "./img/ky040.jpg",
+        imagem: "./img/Encoder Incremental KY-040.webp",
         fabricantes: "Componente genérico",
         codigo: `int CLK = 2, DT = 3;\nint cont = 0, ultimoCLK;\n\nvoid setup() {\n  Serial.begin(9600);\n  pinMode(CLK, INPUT);\n  pinMode(DT, INPUT);\n  ultimoCLK = digitalRead(CLK);\n}\n\nvoid loop() {\n  int atual = digitalRead(CLK);\n  if (atual != ultimoCLK) {\n    if (digitalRead(DT) != atual) cont++;\n    else cont--;\n    Serial.print("Posição: "); Serial.println(cont);\n    ultimoCLK = atual;\n  }\n}`
     }
-];
+]; 
 
 // ============================================================
 // 2. FUNÇÕES PARA RENDERIZAR CARDS E MODAL
