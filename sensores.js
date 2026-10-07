@@ -296,7 +296,7 @@ const sensores = [
         tipoSinal: "Digital (Serial)",
         aplicacoes: "Balanças industriais, controle de estoque, agricultura",
         exemploProjeto: "Balança industrial para controle de produção",
-        imagem: "./img/Célula de Carga + HX711.jpg",
+        imagem: "./img/Celula de Carga + HX711.jpg",
         fabricantes: "Componente genérico",
         codigo: `#include "HX711.h"\nHX711 balanca;\n\nvoid setup() {\n  Serial.begin(9600);\n  balanca.begin(2, 3);\n  balanca.set_scale();\n  balanca.tare();\n}\n\nvoid loop() {\n  float peso = balanca.get_units(3);\n  Serial.print("Peso: "); Serial.print(peso); Serial.println(" kg");\n  delay(500);\n}`
     },
